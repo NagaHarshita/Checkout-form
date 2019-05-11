@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Checkout
+	</title>
+	<h1>Checkout</h1>
+	<link rel="stylesheet" type="text/css" href="checkout.css">
+</head>
+<body>
+    <div class="total">
+    	
+         <div class="Your_order">
+         		<h1>Your Order</h1>
+
+         </div>
+         <div class="Delivery_data">
+         	<h1>Delivery data</h1>
+         	<form>
+            	<div><label for="name"></label>
+            	<input type="text" placeholder="Enter firstname" name="firstname"><br></div>
+            	<div><label for="name"></label>
+            	<input type="text" placeholder="Enter lastname" name="lastname"><br></div>
+            	<div><label for="email"></label>
+            	<input type="email" placeholder="Enter email" name="email" required><br></div>
+            	<div><label for="phone"></label>
+            	<input type="phonenumber" placeholder="Enter phone number" name="phone"><br></div>
+            </form>
+            <div><label for="address"></label>
+            	<input type="address" placeholder="Enter address" name="address"><br></div>
+
+            <input type="checkbox" id="myCheck" onclick="myFunction()">Save my delivery options	
+            	
+         </div>
+         <div class="payment_details">
+         	<h1>Payment data</h1>
+           
+          <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'debit')">Pay through  debit card</button>
+            <button class="tablinks" onclick="openCity(event, 'credit')">Pay through credit card</button>
+            <button class="tablinks" onclick="openCity(event, 'delivery')">Pay on delivery</button>
+            <button class="tablinks" onclick="openCity(event, 'Google_pay')">Pay through Google pay</button>
+            <button class="tablinks" onclick="openCity(event, 'paytm')">Pay through  paytm</button>
+          </div>
+
+          <div id="debit" class="tabcontent">
+            <h3>Pay through debit card</h3>
+           <p>Please enter the credentials of your debit card.</p>
+           <form>
+            	<div><label for="name"></label>
+            	<input type="text" placeholder="Enter the name on the card" name="card"required><br></div>
+            	<div><label for="card number"></label>
+            	<input type="text" placeholder="Enter card number" name="card number"required><br></div>
+            	<div class="number">
+            	<div><label for="month"></label>
+            	<input type="number" placeholder="Enter expiry month" name="month" required><br></div>
+            	<div><label for="year"></label>
+            	<input type="number" placeholder="Enter year" name="year"required><br></div>
+            	<div><label for="cvv"></label>
+            	<input type="number" placeholder="Enter cvv" name="cvv"required><br></div>
+                </div>
+                <div class="big_button">
+         	<button class="big" onclick="">Proceed to payment</button>
+         </div>
+            </form>
+             
+           </div>
+
+           <div id="credit" class="tabcontent">
+            <h3>Pay through credit card</h3>
+           <div><p>Please enter the credentials of your credit card.</p>
+            
+         	<button class="big" onclick="">Proceed to payment</button></div>
+           
+         </div>
+           
+
+          <div id="delivery" class="tabcontent">
+           <h3>Pay on delivery</h3>
+           <p>Thank you for choosing this service.Please pay the money as soon as you receive your order.
+           	<div class="big_button">
+         	<button class="big" onclick="">Proceed to payment</button>
+         </div>
+           </p> 
+            
+           </div>
+
+          <div id="Google_pay" class="tabcontent">
+          <h3>Pay through Google pay</h3>
+          <p>Please enter the necessary information to make the payment successful.
+          <div class="big_button">
+         	<button class="big" onclick="">Proceed to payment</button>
+         </div></p>
+          </div>
+          <div id="paytm" class="tabcontent">
+          <h3>Pay through Google pay</h3>
+          <p>Please enter the necessary information to make the payment successful.
+          <div class="big_button">
+         	<button class="big" onclick="">Proceed to payment</button>
+         </div></p>
+           
+          </div>
+
+           <input type="checkbox" id="myCheck" onclick="myFunction()">Save my payment options	
+
+         </div>
+          
+        
+
+    </div>
+
+
+<script type="text/javascript">
+    function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }}
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all e lements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+
+  
+</script>
+</body>
+</html>
